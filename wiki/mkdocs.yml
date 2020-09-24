@@ -1,0 +1,19 @@
+# Project information
+site_name: Twitter Growth Bot Documentation
+
+# Navigation
+nav:
+  - Home: index.md
+
+theme:
+  name: material
+  language: 'en'
+  palette:
+    primary: 'light blue'
+    accent: 'teal'
+
+
+# Repository
+repo_name: 'Twitter Growth Bot'
+repo_url: 'https://github.com/fernand0aguilar/twitter-growth-bot'
+
