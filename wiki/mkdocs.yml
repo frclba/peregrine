@@ -4,6 +4,17 @@ site_name: Twitter Growth Bot Documentation
 # Navigation
 nav:
   - Home: index.md
+  - Methodology: methodology.md
+  - Requirements Elicitation:
+    - Elicited Requirements Table: requirements/requirements_table.md
+    - RichPicture: requirements/rich_picture.md
+    - 5W2H: requirements/5w2h.md
+    - Brainstorming: requirements/brainstorming.md
+    - Interviews: requirements/interviews.md
+    - MindMap: requirements/mind_map.md
+  - Design Sprint: design_sprint.md
+  - Risk Analysis Plan: risk_plan.md
+  - Prototypes: prototypes.md
 
 theme:
   name: material
