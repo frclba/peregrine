@@ -3,7 +3,7 @@ const { db } = require("../../firebase/db.js");
 
 // https://pptr.dev/#?product=Puppeteer&version=v5.3.1&show=api-pageselector-1
 
-const getQuotesFromPage = async (url) =>
+module.exports.getQuotesFromPage = async (url) =>
   await scrapeIt(url, {
     quotes: {
       listItem: ".quote",
@@ -24,15 +24,13 @@ const getQuotesFromPage = async (url) =>
     },
   });
 
-const terms = ["Benjamin P Hardy", "Grant Cardone"];
-
-(async () => {
+module.exports.getQuotesSeachTerms = async (terms = []) => {
   const searches = db.collection("searches");
 
   terms.map(async (term) => {
     const doc = searches.doc(term);
-
     const termData = (await (await doc.get()).data()) || {};
+
     if (termData.updated) {
       console.log(`term ${term} already searched`);
       return;
@@ -53,8 +51,8 @@ const terms = ["Benjamin P Hardy", "Grant Cardone"];
     let page = 1;
 
     do {
-      const url = `${baseUrl}&page=${page}&q=${term.replace(" ", "+")}`;
       console.log(`searching page ${page} of ${term}`);
+      const url = `${baseUrl}&page=${page}&q=${term.replace(" ", "+")}`;
 
       // check to see if we've scrolled too many pages.
       // eslint-disable-next-line no-await-in-loop
@@ -86,10 +84,11 @@ const terms = ["Benjamin P Hardy", "Grant Cardone"];
       await batch.commit();
 
       doc.set({
+        ...termData,
         updated: new Date(),
       });
 
       page++;
     } while (!allPagesParsed);
   });
-})();
+};
