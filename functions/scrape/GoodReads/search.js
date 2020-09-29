@@ -1,6 +1,5 @@
 const scrapeIt = require("scrape-it");
 const { db } = require("../../firebase/db.js");
-const { getDayDiff } = require("../../utils/dates");
 
 // https://pptr.dev/#?product=Puppeteer&version=v5.3.1&show=api-pageselector-1
 
@@ -39,9 +38,9 @@ const terms = ["Benjamin P Hardy", "Grant Cardone"];
       return;
       // TODO: once per week per phrase
       // TODO: handle later overwriting of quotes
-      if (getDayDiff(new Date(), termData.updated) <= 7) {
-        return;
-      }
+      // if (getDayDiff(new Date(), termData.updated) <= 7) {
+      //   return;
+      // }
     }
 
     console.log(`searching ${term}`);
@@ -58,9 +57,11 @@ const terms = ["Benjamin P Hardy", "Grant Cardone"];
       console.log(`searching page ${page} of ${term}`);
 
       // check to see if we've scrolled too many pages.
+      // eslint-disable-next-line no-await-in-loop
       await scrapeIt(url, {
         noResults: {
           selector: ".mediumText",
+          // eslint-disable-next-line no-loop-func
           convert: (x) => {
             if (x.includes("no results")) {
               allPagesParsed = true;
@@ -74,12 +75,14 @@ const terms = ["Benjamin P Hardy", "Grant Cardone"];
         return;
       }
 
+      // eslint-disable-next-line no-await-in-loop
       const theseQuotes = await getQuotesFromPage(url);
       // TODO: get where check duplicates???
       const batch = db.batch();
       theseQuotes.data.quotes.map((quote) =>
         batch.set(quotes.doc(), { quote, updated: new Date() })
       );
+      // eslint-disable-next-line no-await-in-loop
       await batch.commit();
 
       doc.set({
