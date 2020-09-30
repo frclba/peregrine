@@ -1,0 +1,34 @@
+.App {
+  padding: 8px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .logo {
+      height: 54px;
+    }
+
+    .text {
+      margin-left: 8px;
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+        font-style: italic;
+      }
+
+      h2 {
+        font-size: 18px;
+        margin-top: 0;
+        font-weight: 200;
+      }
+    }
+
+    .navigation {
+      margin-left: auto;
+      padding-right: 8px;
+    }
+  }
+}
