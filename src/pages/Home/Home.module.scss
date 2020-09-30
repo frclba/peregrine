@@ -2,10 +2,39 @@
   padding: 16px;
   max-width: 100vw;
   text-align: center;
+  z-index: 9;
 
   @media (min-width: 768px) {
     max-width: 420px;
     text-align: left;
-    margin-left: 5%;
+    margin-left: 10%;
+  }
+}
+
+.main {
+  position: relative;
+  background: url("../../assets/img/backgrounds/iphone-twitter.jpg") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .overlay {
+    background: rgba(255, 255, 255, 0.69);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    @media (min-width: 768px) {
+      right: calc(100vw - 70%);
+    }
+
+    @media (min-width: 768px) {
+      right: calc(100vw - 50%);
+    }
   }
 }

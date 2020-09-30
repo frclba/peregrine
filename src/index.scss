@@ -6,9 +6,14 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.firebaseui-container {
+  max-width: auto !important;
+  margin: 0 !important;
+}
+
 @media (min-width: 768px) {
   .firebaseui-card-content {
-    padding: 0;
+    padding: 0 !important;
   }
   .firebaseui-idp-list > .firebaseui-list-item {
     text-align: left !important;

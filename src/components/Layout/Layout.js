@@ -6,7 +6,7 @@ import { auth } from "../../api/firebase";
 import styles from "./Layout.module.scss";
 import logo from "../../assets/img/logo.png";
 
-export default function Layout({ pageId, children, user }) {
+export default function Layout({ pageId, children, user, mainClass }) {
   const [showModal, setModalShown] = useState(false);
   const handleModalState = () => setModalShown(!showModal);
 
@@ -20,17 +20,14 @@ export default function Layout({ pageId, children, user }) {
               {window.innerWidth >= 700 ? (
                 <>
                   <h1>
-                    Flashy Product Name <small>(alpha 0.0.1)</small>
+                    Peregrine <small>(alpha 0.0.1)</small>
                   </h1>
-                  <h2>
-                    Catalyze Your Twitter Growth Our Premier Automation
-                    Toolsuite
-                  </h2>
+                  <h2>Catalyze Your Twitter Growth</h2>
                 </>
               ) : (
                 <>
-                  <h1>Flashy Name</h1>
-                  <h2>Catalyze Your Growth</h2>
+                  <h1>Peregrine</h1>
+                  <h2>Twitter Growth Suite</h2>
                 </>
               )}
             </div>
@@ -67,7 +64,7 @@ export default function Layout({ pageId, children, user }) {
         </Modal>
       )}
 
-      <main>{children}</main>
+      <main className={`${mainClass ? mainClass : ""}`}>{children}</main>
 
       {/* <footer>
         Icons made by{" "}

@@ -6,7 +6,7 @@ import styles from "./Home.module.scss";
 
 const Home = ({ user, setLoading }) => {
   return (
-    <Layout id="home" user={user}>
+    <Layout id="home" user={user} mainClass={styles.main}>
       <div className={styles.eyeCatcher}>
         <h3>What the product is to the user</h3>
         <p>
@@ -24,6 +24,7 @@ const Home = ({ user, setLoading }) => {
           <AuthForm setLoading={setLoading} />
         </div>
       </div>
+      <div className={styles.overlay} />
     </Layout>
   );
 };
