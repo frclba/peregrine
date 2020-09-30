@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Modal, Button, Navbar } from "react-bootstrap";
+import { Modal, Button, Navbar, Container } from "react-bootstrap";
 
 import { auth } from "../../api/firebase";
 
 import styles from "./Layout.module.scss";
-import logo from "./logo.png";
+import logo from "../../assets/img/logo.png";
 
 export default function Layout({ pageId, children, user }) {
   const [showModal, setModalShown] = useState(false);
@@ -13,31 +13,41 @@ export default function Layout({ pageId, children, user }) {
   return (
     <div className={styles.App} id={pageId}>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand className={styles.navbarBrand} href="#home">
-          <img src={logo} className={styles.logo} alt="logo" />
-          <div className={styles.text}>
-            {window.innerWidth >= 700 ? (
-              <>
-                <h1>
-                  Twitter Growth Hacker <small>(alpha 0.0.1)</small>
-                </h1>
-                <h2>
-                  Catalyze Your Twitter Growth Our Premier Automation Toolsuite
-                </h2>
-              </>
-            ) : (
-              <>
-                <h1>Twitter Growth Hacker</h1>
-                <h2>Version 0.0.1</h2>
-              </>
-            )}
-          </div>
-        </Navbar.Brand>
-        {user && (
-          <button onClick={handleModalState} className={styles.userMenu}>
-            <img alt={user.displayName} src={user.photoURL} />
-          </button>
-        )}
+        <Container>
+          <Navbar.Brand className={styles.navbarBrand} href="#home">
+            <img src={logo} className={styles.logo} alt="logo" />
+            <div className={styles.text}>
+              {window.innerWidth >= 700 ? (
+                <>
+                  <h1>
+                    Flashy Product Name <small>(alpha 0.0.1)</small>
+                  </h1>
+                  <h2>
+                    Catalyze Your Twitter Growth Our Premier Automation
+                    Toolsuite
+                  </h2>
+                </>
+              ) : (
+                <>
+                  <h1>Flashy Name</h1>
+                  <h2>Catalyze Your Growth</h2>
+                </>
+              )}
+            </div>
+          </Navbar.Brand>
+          {user ? (
+            <button onClick={handleModalState} className={styles.userMenu}>
+              <img alt={user.displayName} src={user.photoURL} />
+            </button>
+          ) : (
+            <div className={styles.userMenuDefault}>
+              <img
+                alt="placeholder"
+                src={require("../../assets/img/user-placeholder.png")}
+              />
+            </div>
+          )}
+        </Container>
       </Navbar>
 
       {user && (

@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
+@import url("./lux.min.css");
+
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .firebaseui-card-content {
+    padding: 0;
+  }
+  .firebaseui-idp-list > .firebaseui-list-item {
+    text-align: left !important;
+  }
 }

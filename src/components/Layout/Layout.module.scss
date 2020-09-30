@@ -12,13 +12,12 @@
       margin-left: 8px;
 
       h1 {
-        font-size: 18px;
+        font-size: 20px;
         margin-bottom: 0;
-        font-style: italic;
       }
 
       h2 {
-        font-size: 14px;
+        font-size: 11px;
       }
 
       @media (min-width: 420px) {
@@ -32,12 +31,12 @@
 
       h2 {
         margin-top: 0;
-        font-weight: 200;
       }
     }
   }
 
-  .userMenu {
+  .userMenu,
+  .userMenuDefault {
     background: none;
     border: none;
     padding: none;
@@ -45,6 +44,11 @@
 
     img {
       height: 48px;
+    }
+  }
+
+  .userMenu {
+    img {
       border-radius: 50%;
     }
   }
@@ -56,6 +60,18 @@
 
   main,
   footer {
-    padding: 8px;
+    padding: 16px;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 82px);
+
+    @media (min-width: 768px) {
+      align-items: center;
+      justify-content: flex-start;
+    }
   }
 }
