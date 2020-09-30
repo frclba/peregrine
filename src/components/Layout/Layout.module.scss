@@ -1,34 +1,56 @@
 .App {
-  padding: 8px;
+  .logo {
+    height: 54px;
+  }
 
-  .header {
+  .navbarBrand {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-
-    .logo {
-      height: 54px;
-    }
+    justify-content: center;
 
     .text {
       margin-left: 8px;
 
       h1 {
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 0;
         font-style: italic;
       }
 
       h2 {
-        font-size: 18px;
+        font-size: 14px;
+      }
+
+      @media (min-width: 420px) {
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 18px;
+        }
+      }
+
+      h2 {
         margin-top: 0;
         font-weight: 200;
       }
     }
+  }
 
-    .navigation {
-      margin-left: auto;
-      padding-right: 8px;
+  .userMenu {
+    background: none;
+    border: none;
+    padding: none;
+    margin-left: auto;
+
+    img {
+      height: 48px;
+      border-radius: 50%;
     }
+  }
+
+  .navigation {
+    margin-left: auto;
+    padding-right: 8px;
   }
 }

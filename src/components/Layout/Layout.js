@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import _ from "lodash";
 
 import { auth } from "../../api/firebase";
 
@@ -8,43 +9,61 @@ import logo from "./logo.png";
 
 export default function Layout({ pageId, children, user }) {
   const [showModal, setModalShown] = useState(false);
-  const handleCloseModal = () => setModalShown(false);
+  const handleModalState = () => setModalShown(!showModal);
 
   return (
     <div className={styles.App} id={pageId}>
-      <header className={styles.header}>
-        <img src={logo} className={styles.logo} alt="logo" />
-        <div className={styles.text}>
-          <h1>
-            Twitter Growth Hacker <small>(alpha 0.0.1)</small>
-          </h1>
-          <h2>Catalyze Your Twitter Growth Our Premier Automation Toolsuite</h2>
-        </div>
-        <div className={styles.navigation}>
-          {user && <Button onClick={() => auth.signOut()}>Sign Out</Button>}
-        </div>
-      </header>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand className={styles.navbarBrand} href="#home">
+          <img src={logo} className={styles.logo} alt="logo" />
+          <div className={styles.text}>
+            {window.innerWidth >= 700 ? (
+              <>
+                <h1>
+                  Twitter Growth Hacker <small>(alpha 0.0.1)</small>
+                </h1>
+                <h2>
+                  Catalyze Your Twitter Growth Our Premier Automation Toolsuite
+                </h2>
+              </>
+            ) : (
+              <>
+                <h1>Twitter Growth Hacker</h1>
+                <h2>Version 0.0.1</h2>
+              </>
+            )}
+          </div>
+        </Navbar.Brand>
+        {user && (
+          <button onClick={handleModalState} className={styles.userMenu}>
+            <img alt={user.displayName} src={user.photoURL} />
+          </button>
+        )}
+      </Navbar>
 
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal Example</Modal.Title>
-        </Modal.Header>
+      {user && (
+        <Modal show={showModal} onHide={handleModalState}>
+          <Modal.Header closeButton>
+            <Modal.Title>Sign Out</Modal.Title>
+          </Modal.Header>
 
-        <Modal.Body></Modal.Body>
+          <Modal.Body>Are you sure you want to sign out?</Modal.Body>
 
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleCloseModal}>
-            Cool!
-          </Button>
-        </Modal.Footer>
-      </Modal>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleModalState}>
+              Not yet!
+            </Button>
+            <Button onClick={() => auth.signOut()}>Sign Out</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
 
       {children}
 
       <footer>
         Icons made by{" "}
-        <a href="https://www.flaticon.com/authors/pause08" title="Pause08">
-          Pause08
+        <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+          Freepik
         </a>{" "}
         from{" "}
         <a href="https://www.flaticon.com/" title="Flaticon">
