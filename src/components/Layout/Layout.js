@@ -41,7 +41,17 @@ export default function Layout({ pageId, children, user }) {
 
       {children}
 
-      <footer></footer>
+      <footer>
+        Icons made by{" "}
+        <a href="https://www.flaticon.com/authors/pause08" title="Pause08">
+          Pause08
+        </a>{" "}
+        from{" "}
+        <a href="https://www.flaticon.com/" title="Flaticon">
+          {" "}
+          www.flaticon.com
+        </a>
+      </footer>
     </div>
   );
 }
