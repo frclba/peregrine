@@ -4,11 +4,11 @@ import _ from "lodash";
 
 import { auth } from "./api/firebase";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
 
 import withAuthentication from "./hoc/withAuthentication";
 
-const ProtectedProfileView = withAuthentication("/")(Profile);
+const ProtectedDashboardView = withAuthentication("/")(Dashboard);
 
 export default class App extends Component {
   constructor() {
@@ -60,7 +60,7 @@ export default class App extends Component {
             path="/"
             exact
             render={(props) => (
-              <ProtectedProfileView {...props} {...appProps} />
+              <ProtectedDashboardView {...props} {...appProps} />
             )}
           />
         </Switch>

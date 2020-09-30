@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import _ from "lodash";
+import { Modal, Button, Navbar } from "react-bootstrap";
 
 import { auth } from "../../api/firebase";
 
@@ -58,9 +57,9 @@ export default function Layout({ pageId, children, user }) {
         </Modal>
       )}
 
-      {children}
+      <main>{children}</main>
 
-      <footer>
+      {/* <footer>
         Icons made by{" "}
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
           Freepik
@@ -70,7 +69,7 @@ export default function Layout({ pageId, children, user }) {
           {" "}
           www.flaticon.com
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
