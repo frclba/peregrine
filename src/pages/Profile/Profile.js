@@ -1,13 +1,11 @@
 import React from "react";
-import _ from "lodash";
+import Layout from "../../components/Layout";
 
-const Profile = ({ me }) => {
-  const email = _.get(me, "email");
-
+const Profile = ({ user }) => {
   return (
-    <p>
-      My name is <b>{email}</b>
-    </p>
+    <Layout id="profile" user={user}>
+      Welcome!
+    </Layout>
   );
 };
 
