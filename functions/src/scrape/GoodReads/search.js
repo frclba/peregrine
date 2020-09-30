@@ -83,8 +83,7 @@ module.exports.getQuotesSeachTerms = async (terms = []) => {
       // eslint-disable-next-line no-await-in-loop
       await batch.commit();
 
-      doc.set({
-        ...termData,
+      doc.update({
         updated: new Date(),
       });
 
