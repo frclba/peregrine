@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/Layout";
 import affiliates from "../../content/affiliates";
 
+import styles from "./Dashboard.module.scss";
+
 const Dashboard = ({ user }) => {
   return (
-    <Layout id="dashboard" user={user}>
-      <h3>Welcome {user.displayName}!</h3>
+    <Layout id="dashboard" user={user} mainClass={styles.main}>
       <h4>Main Tools</h4>
       <div>
         <h5>Automated Bulk Niche Tweet Generator</h5>

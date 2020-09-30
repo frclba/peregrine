@@ -67,16 +67,4 @@
   footer {
     padding: 16px;
   }
-
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 86px);
-
-    @media (min-width: 768px) {
-      align-items: center;
-      justify-content: flex-start;
-    }
-  }
 }
