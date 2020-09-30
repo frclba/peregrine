@@ -2,11 +2,11 @@ import React from "react";
 import AuthForm from "./AuthForm";
 import Layout from "../../components/Layout";
 
-const Home = ({ user }) => {
+const Home = ({ user, setLoading }) => {
   return (
     <Layout id="home" user={user}>
       <div>
-        <AuthForm />
+        <AuthForm setLoading={setLoading} />
       </div>
     </Layout>
   );

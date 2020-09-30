@@ -2,8 +2,9 @@ import React from "react";
 import firebase, { auth } from "../../api/firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
-const AuthForm = () => (
+const AuthForm = ({ setLoading }) => (
   <StyledFirebaseAuth
+    uiCallback={(ui) => console.log("hello", ui)}
     uiConfig={{
       signInFlow: "popup",
       signInOptions: [
@@ -11,7 +12,7 @@ const AuthForm = () => (
         firebase.auth.TwitterAuthProvider.PROVIDER_ID,
       ],
       callbacks: {
-        signInSuccessWithAuthResult: () => false,
+        signInSuccessWithAuthResult: () => setLoading(false),
       },
     }}
     firebaseAuth={auth}

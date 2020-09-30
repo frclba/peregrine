@@ -5,10 +5,12 @@ import _ from "lodash";
 import { auth } from "./api/firebase";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import Generator from "./pages/Generator";
 
 import withAuthentication from "./hoc/withAuthentication";
 
 const ProtectedDashboardView = withAuthentication("/")(Dashboard);
+const ProtectedGeneratorView = withAuthentication("/")(Generator);
 
 export default class App extends Component {
   constructor() {
@@ -54,13 +56,26 @@ export default class App extends Component {
           <Route
             path="/auth"
             exact
-            render={(props) => <Home {...props} {...appProps} />}
+            render={(props) => (
+              <Home
+                setLoading={() => this.setState({ isLoading: !isLoading })}
+                {...props}
+                {...appProps}
+              />
+            )}
           />
           <Route
             path="/"
             exact
             render={(props) => (
               <ProtectedDashboardView {...props} {...appProps} />
+            )}
+          />
+          <Route
+            path="/generate"
+            exact
+            render={(props) => (
+              <ProtectedGeneratorView {...props} {...appProps} />
             )}
           />
         </Switch>
