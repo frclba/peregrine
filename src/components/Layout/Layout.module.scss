@@ -1,0 +1,70 @@
+.App {
+  .logo {
+    height: 54px;
+  }
+
+  .navbarBrand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+      margin-left: 8px;
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 0;
+
+        small {
+          font-size: 12px;
+          font-style: italic;
+        }
+      }
+
+      h2 {
+        font-size: 11px;
+      }
+
+      @media (min-width: 420px) {
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 18px;
+        }
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .userMenu,
+  .userMenuDefault {
+    background: none;
+    border: none;
+    padding: none;
+    margin-left: auto;
+
+    img {
+      height: 48px;
+    }
+  }
+
+  .userMenu {
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .navigation {
+    margin-left: auto;
+    padding-right: 8px;
+  }
+
+  main,
+  footer {
+    padding: 16px;
+  }
+}

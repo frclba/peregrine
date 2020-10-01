@@ -1,2 +1,5 @@
 # twitter-growth-bot
-Twitter Growth Bot
+
+## todo
+
+- https://github.com/CSFrequency/react-firebase-hooks
