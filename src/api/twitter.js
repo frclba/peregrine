@@ -1,4 +1,4 @@
-const OAuth = require("oauth");
+import OAuth from "oauth";
 
 class Twitter {
   constructor(config) {

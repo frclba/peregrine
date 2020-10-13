@@ -1,6 +1,7 @@
 import firebase from "./firebase";
-const dotenv = require("dotenv");
-const Twitter = require("./twitter.js");
+import dotenv from "dotenv"
+
+import Twitter from "./twitter.js";
 
 dotenv.config();
 

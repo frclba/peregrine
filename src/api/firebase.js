@@ -1,15 +1,18 @@
 import firebase from "firebase";
+import dotenv from "dotenv"
+
+dotenv.config();
 
 // Initialize Firebase
 firebase.initializeApp({
-  apiKey: "AIzaSyDB9HOwm-s4X2ZUv9ZJtUP0gfvX4ERn2cI",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "twitter-growth-hacker.firebaseapp.com",
   databaseURL: "https://twitter-growth-hacker.firebaseio.com",
   projectId: "twitter-growth-hacker",
   storageBucket: "twitter-growth-hacker.appspot.com",
-  messagingSenderId: "670422029636",
-  appId: "1:670422029636:web:709289f52622e7bce7b311",
-  measurementId: "G-Y4RQ2ZRLHV",
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 });
 
 export const auth = firebase.auth();
