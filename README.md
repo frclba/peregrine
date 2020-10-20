@@ -1,11 +1,21 @@
-# twitter-growth-bot
+# Peregrine
+**Twitter-Growth-Bot**
 
-## todo
+## Project Description
 
-- https://github.com/CSFrequency/react-firebase-hooks
+```
+TODO
+```
 
-## Steps
+## How To Run
 
-    Sign up for a Twitter API account, get keys.
-    Add Account Activity API / Sandbox with a dev environment/label.
-    Sign up for ngrok account and get an auth token
+```
+TODO
+```
+
+## Open Source [![Open Source ](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+
+- [Contribution Guide](./contributing.md)
+- [Style Guide](./STYLE_GUIDE.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
