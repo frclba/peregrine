@@ -1,0 +1,853 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
+    
+    
+      
+        <title>Risk Analysis Plan - Twitter Growth Bot Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6910b76c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.196e0c26.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="teal">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#risk-planning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Twitter Growth Bot Documentation" class="md-header-nav__button md-logo" aria-label="Twitter Growth Bot Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Twitter Growth Bot Documentation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Risk Analysis Plan
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/fernand0aguilar/twitter-growth-bot/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Twitter Growth Bot
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Twitter Growth Bot Documentation" class="md-nav__button md-logo" aria-label="Twitter Growth Bot Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Twitter Growth Bot Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/fernand0aguilar/twitter-growth-bot/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Twitter Growth Bot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../methodology/" class="md-nav__link">
+      Methodology
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../design_sprint/" class="md-nav__link">
+      Design Sprint
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      Requirements Elicitation
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Requirements Elicitation" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Requirements Elicitation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/brainstorming/" class="md-nav__link">
+      Brainstorming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/5w2h/" class="md-nav__link">
+      5W2H
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/rich_picture/" class="md-nav__link">
+      RichPicture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/interviews/" class="md-nav__link">
+      Interviews
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/mind_map/" class="md-nav__link">
+      MindMap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/requirements_table/" class="md-nav__link">
+      Elicited Requirements Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Risk Analysis Plan
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Risk Analysis Plan
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytical-structure-of-the-risks" class="md-nav__link">
+    Analytical Structure of the Risks
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytical Structure of the Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description-of-each-items" class="md-nav__link">
+    Description of each Items
+  </a>
+  
+    <nav class="md-nav" aria-label="Description of each Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    Project management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizational" class="md-nav__link">
+    Organizational
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical" class="md-nav__link">
+    Technical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external" class="md-nav__link">
+    External
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    Quality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../prototypes/" class="md-nav__link">
+      Prototypes
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytical-structure-of-the-risks" class="md-nav__link">
+    Analytical Structure of the Risks
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytical Structure of the Risks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description-of-each-items" class="md-nav__link">
+    Description of each Items
+  </a>
+  
+    <nav class="md-nav" aria-label="Description of each Items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    Project management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organizational" class="md-nav__link">
+    Organizational
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical" class="md-nav__link">
+    Technical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external" class="md-nav__link">
+    External
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    Quality
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/fernand0aguilar/twitter-growth-bot/edit/master/docs/risk_plan.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="risk-planning">Risk Planning</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The purpose of this document is to explain how the risk analysis plan took place.</p>
+<p>The objective is to predict how all expected risks will be identified, quantified, qualified, maintained and controlled.</p>
+<p>In case something goes wrong in the process, we can go back at this document and choose which risks are we going to take in order to change the results.</p>
+<hr />
+<h2 id="analytical-structure-of-the-risks">Analytical Structure of the Risks</h2>
+<p><img alt="analytical structure" src="/img/risk_mapping_diagram.jpg" /></p>
+<h3 id="description-of-each-items">Description of each Items</h3>
+<h4 id="project-management">Project management</h4>
+<ul>
+<li><strong>Planning</strong>: related to planning, such as large tasks in short periods.</li>
+<li><strong>Estimation</strong>: relate to estimation, such as errors in delivery prediction.</li>
+<li><strong>Verify</strong>: related to the lack of action.</li>
+</ul>
+<h4 id="organizational">Organizational</h4>
+<ul>
+<li><strong>Human Resources</strong>: communication or lack of parties involved.</li>
+<li><strong>Prioritization</strong>: focus. The one thing.</li>
+<li><strong>Productivity</strong>: the commitment of the development team</li>
+</ul>
+<h4 id="technical">Technical</h4>
+<ul>
+<li><strong>Requirements</strong>: Risks related to the requirements raised and the defined scope.</li>
+<li><strong>Technology</strong>: Risks related to the technologies and tools used in the project.</li>
+<li><strong>Infrastructure</strong>: One of the most critical points of risk management in software projects, as we usually forget to provide in advance the infrastructure where the software will run. It involves the whole question of architecture, definition of technology.</li>
+</ul>
+<h4 id="external">External</h4>
+<ul>
+<li><strong>Market</strong>: Competition risks. Low user attraction, or evolution of the project in the market.  </li>
+<li><strong>Customer</strong>: It concerns the risks related to the customer, such as approval of the solution, good acceptance and adherence.</li>
+<li><strong>Environment</strong>: The environment can influence team performance and product development. Remote work can carry several risks.</li>
+</ul>
+<h4 id="quality">Quality</h4>
+<ul>
+<li><strong>Functionality</strong>: Includes everything related to the functionality of the software.</li>
+<li><strong>Usability</strong>: Usability encompasses all aspects related to the interface with ease and accessibility.</li>
+<li><strong>Efficiency</strong>: Ensure that the is able to have the application's responses quickly and cohesively.</li>
+<li><strong>Portability</strong>: Refers to which platforms / operating systems the software will run on and how the compatibility will be made.</li>
+</ul>
+<hr />
+<h1 id="response-to-problems-planning">Response to problems planning</h1>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Level</td>
+            <th scope="col">Risk</td>
+            <th scope="col">Action</td>
+            <th scope="col">Solution</td>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Green -->
+        <tr style = "background: #90EE90">
+            <th> 2 </th>
+            <td> Difficulty with technologies </td>
+            <td> Mitigate </td>
+            <td> Study in advance and make changes according to the actual knowledge.</td>
+        </tr>
+        <tr style = "background:#90EE90">
+            <th> 4 </th>
+            <td>Error-inducing documentation</td>
+            <td>Prevent </td>
+            <td> Value the documentation phase and keep it updated, in addition to all members being aligned with the documents produced </td>
+        </tr>
+        <tr style="background:#90EE90">
+            <th>6</th>
+            <td> Prioritization Error </td>
+            <td> Prevent </td>
+            <td> Set the priority and follow the documentation </td>
+        </tr>
+        <tr style = "background:#90EE90">
+            <th> 8 </th>
+            <td> Undefined scope </td>
+            <td> Prevent </td>
+            <td> Having the main features well defined and rely on them </td>
+         </tr>
+         <tr style="background:#90EE90">
+            <th>6</th>
+            <td>Difficulty creating backlog</td>
+            <td>Prevent</td>
+            <td>Value the modeling phase and define backlog with all members</td>
+        </tr>
+        <tr style="background:#90EE90">
+            <th>12</th>
+            <td> Bad practice in the development process </td>
+            <td> Prevent </td>
+            <td> Study and reinforce good programming practices </td>
+        </tr>
+         <!-- Yellow -->
+        <tr style="background:#FFFF66">
+            <th>4</th>
+            <td>Team commitment</td>
+            <td>Mitigate</td>
+            <td>Encourage dailys, comments on PRs, trello and chat.</td>
+        </tr>
+        <tr style="background:#FFFF66">
+            <th>6</th>
+            <td>Lack of motivation</td>
+            <td>Prevent</td>
+            <td> Engage, show purpose and impact. Lead by example. Serve by your actions and responsibilities. Give both constructive and positive feedbacks</td>
+        </tr>
+        <tr style="background:#FFFF66">
+            <th>6</th>
+            <td>Team self-management problem</td>
+            <td>Prevent</td>
+            <td>Have well-defined meeting days and times, pairings and deliveries</td>
+        </tr>
+        <tr style="background:#FFFF66">
+            <th>8</th>
+            <td>Disagreements</td>
+            <td>Prevent</td>
+            <td>Respect members' time, opinion and limitations, be empathetic</td>
+        </tr>
+        <tr style = "background: #FFFF66">
+            <th> 8 </th>
+            <td> Communication failure </td>
+            <td> Mitigate </td>
+            <td> Encourage dailys, comments on PRs, trello and chat </td>
+        </tr>
+        <tr style = "background: #FFFF66">
+            <th> 10 </th>
+            <td> Poor time management </td>
+            <td> Prevent </td>
+            <td> Define deliveries and activities </td>
+        </tr>
+        <tr style = "background: #FFFF66">
+            <th> 6 </th>
+            <td> Members' divergent schedules </td>
+            <td> Mitigate </td>
+            <td> Be flexible with respect to the schedule and tasks to be performed </td>
+        </tr>
+        <tr style = "background: #FFFF66">
+            <th> 9 </th>
+            <td> Members' different nationalities and locations</td>
+            <td> Mitigate </td>
+            <td> Be flexible and work remotely. Use bitcoin and leverage taxes</td>
+        </tr>
+        <!-- Orange -->
+        <tr style = "background:#FFB366">
+            <th> 9 </th>
+            <td> Delay in deliveries </td>
+            <td> Prevent </td>
+            <td> Give priority to tasks, know how to split the sprint schedule </td>
+        </tr>
+        <tr style = "background: #FFB366">
+            <th> 12 </th>
+            <td> Task overload </td>
+            <td> Prevent </td>
+            <td> Alert about overbooked and make effort to work daily. Improve efficiency</td>
+        </tr>
+        <tr style = "background:#FFB366">
+            <th> 9 </th>
+            <td> Absence of tests </td>
+            <td> Mitigate </td>
+            <td> Organize and prioritize what needs testing most </td>
+        </tr>
+        <tr style="background:#FFB366">
+            <th>6</th>
+            <td> Poor UI implementation </td>
+            <td> Prevent </td>
+            <td> Study UI and test all phases with user</td>
+        </tr>
+        <tr style = "background: #FFB366">
+            <th> 8 </th>
+            <td> Poor choice of technologies </td>
+            <td> Prevent </td>
+            <td> Studying technologies and making changes according to the defined necessities</td>
+        </tr>
+        <tr style = "background:#FFB366">
+            <th> 12 </th>
+            <td> Poorly defined architecture </td>
+            <td> Prevent </td>
+            <td> Study about architecture, validate with tech lead</td>
+        </tr>
+        <tr style = "background:#FFB366">
+            <th> 12 </th>
+            <td> Poorly defined process </td>
+            <td> Prevent </td>
+            <td> Study about processes and implement needed bureaucracy. </td>
+        </tr>
+        <tr style = "background:#FFB366">
+            <th> 12 </th>
+            <td> Application does not meet user expectations </td>
+            <td> Prevent </td>
+            <td> Test all phases with user, receiving feedbacks and responding to them </td>
+        </tr>
+        <!-- RED -->
+        <tr style = "background: #FF6666">
+            <th> 12 </th>
+            <td> Low application adhesion </td>
+            <td> Mitigate </td>
+            <td> Advertise the app to our target audience. Market. Growth Hacking </td>
+        </tr>
+        <tr style = "background:#FF6666">
+            <th> 12 </th>
+            <td> Difficulty developing the application </td>
+            <td> Mitigate </td>
+            <td> Hire. Copy open source technologies </td>
+        </tr>
+        <tr style = "background: #FF6666">
+            <th> 16 </th>
+            <td> Absence of member (illness, grief, family assistance, others...) </td>
+            <td> Accept </td>
+            <td> Try to relocate tasks according to what happened </td>
+        </tr>
+        <tr style = "background: #FF6666">
+            <th> 16 </th>
+            <td> Unforeseen events with infrastructure (internet, energy, computer) </td>
+            <td> Accept </td>
+            <td>Communicate problem. Seek solution outside the box.</td>
+        </tr>
+        <tr style = "background: #FF6666">
+            <th> 16 </th>
+            <td> Failures and bugs </td>
+            <td> Mitigate </td>
+            <td> Most Urgent Tasks. Dedicate bug and refactoring issues. Act quickly </td>
+        </tr>
+    </tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../requirements/requirements_table/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Elicited Requirements Table
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../prototypes/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Prototypes
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.fd16492e.min.js"></script>
+      <script src="../assets/javascripts/bundle.7836ba4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
